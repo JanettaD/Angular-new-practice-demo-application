@@ -8,19 +8,21 @@ import { Component } from '@angular/core';
   styleUrl: './server-status.component.css',
 })
 export class ServerStatusComponent {
-    currentStatus: 'online' | 'offline' | 'unknown' = 'online';
+  currentStatus: 'online' | 'offline' | 'unknown' = 'online';
 
-    constructor(){
-        setInterval(()=> {
-            const rnd = Math.random(); // 0 - 0.99999999
+  constructor() {}
 
-            if (rnd < 0.5) {
-                this.currentStatus = 'online';  
-            } else if(rnd < 0.9){
-                this.currentStatus = 'offline';
-            } else {
-                this.currentStatus = 'unknown'
-            }
-        }, 5000);
-    }
+  ngOnInit() {
+    setInterval(() => {
+      const rnd = Math.random(); // 0 - 0.99999999
+
+      if (rnd < 0.5) {
+        this.currentStatus = 'online';
+      } else if (rnd < 0.9) {
+        this.currentStatus = 'offline';
+      } else {
+        this.currentStatus = 'unknown';
+      }
+    }, 5000);
+  }
 }
