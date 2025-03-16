@@ -15,7 +15,6 @@ export class NewTicketComponent {
 
   onSubmit(title: string, ticketText: string, form: HTMLFormElement) {
     this.add.emit({ title: title, text: ticketText });
-
     form.reset();
   }
 }
